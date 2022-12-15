@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Merssith/TMDB-Back">
-    <img src="utils/images/logo.png" alt="Logo" width="300">
+    <img src="utils/images/logo.png" alt="Logo" width="400">
   </a>
 
 <h3 align="center">THE MOVIE DATABASE - BACKEND</h3>
@@ -122,7 +122,7 @@ It's not available yet. Come back soon! ;)
 
 <!-- <p align="center"><img src="https://cdn.shopify.com/s/files/1/0057/5668/2355/files/Postman-logo-orange-2021_1155x.png?v=1637252529" alt="Logo" width="40%"></p>
 
-Detailed documentation of all API methods can be found <a href="https://documenter.getpostman.com/view/18263083/2s8YzP35ck" target="_blank">HERE</a>. You can also download the complete [Postman collection](https://api.postman.com/collections/18263083-ae76eece-22fc-491a-a564-3828736b5f04?access_key=PMAT-01GKM9HZEPR2NNHN1EJ14PKYRH).-->
+Detailed documentation of all API methods can be found <a href="https://documenter.getpostman.com/view/18263083/2s8YzP35ck" target="_blank">HERE</a>. You can also download the complete [Postman collection]().-->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
