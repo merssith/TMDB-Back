@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/merssith/TMDB-Back/issues"
   },
-  "homepage": "https://github.com/merssith/TMDB-Back#readme"
+  "homepage": "https://github.com/merssith/TMDB-Back#readme",
+  "dependencies": {
+    "sequelize": "^6.27.0"
+  }
 }
