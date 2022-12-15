@@ -1,8 +1,19 @@
 const S = require("sequelize");
 const db = require("../config/db");
+const bcrypt = require("bcrypt");
 const List = require("./List");
 
-class User extends S.Model {}
+class User extends S.Model {
+  hash(password, salt) {
+    return bcrypt.hash(password, salt);
+  }
+
+  validatePassword(password) {
+    return this.hash(password, this.salt).then(
+      (newHash) => newHash === this.password
+    );
+  }
+}
 
 User.init(
   {
@@ -29,6 +40,9 @@ User.init(
       type: S.STRING,
       allowNull: false,
     },
+    salt: {
+      type: S.STRING,
+    },
     avatar: {
       type: S.STRING,
       defaultValue:
@@ -43,10 +57,13 @@ User.init(
 );
 
 User.beforeCreate((user) => {
-  user.lastName =
-    user.lastName[0].toUpperCase() + user.lastName.slice(1).toLowerCase();
-  user.name = user.name[0].toUpperCase() + user.name.slice(1).toLowerCase();
-  return user.lastName && user.name;
+  const salt = bcrypt.genSaltSync();
+
+  user.salt = salt;
+
+  return user.hash(user.password, salt).then((hash) => {
+    user.password = hash;
+  });
 });
 
 User.List = User.hasMany(List);

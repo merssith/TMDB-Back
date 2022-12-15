@@ -19,10 +19,16 @@
   },
   "homepage": "https://github.com/merssith/TMDB-Back#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cloudinary": "^1.33.0",
     "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-form-data": "^2.0.19",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^8.8.0",
     "sequelize": "^6.27.0",
+    "uuid": "^9.0.0",
     "volleyball": "^1.5.1"
   },
   "devDependencies": {
