@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Merssith/TMDB-Back">
-    <img src="utils/images/logo.png" alt="Logo" width="300">
+    <img src="utils/images/logo.png" alt="Logo" width="450">
   </a>
 
 <h3 align="center">THE MOVIE DATABASE - BACKEND</h3>
