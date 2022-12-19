@@ -1,5 +1,4 @@
 const createUsers = require("./users.js");
-//const createLists = require("./lists.js");
+const createLists = require("./lists.js");
 
-createUsers();
-//  .then(() => createLists())
+createUsers().then(() => createLists());
