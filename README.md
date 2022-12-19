@@ -65,6 +65,7 @@ The project is currently in the development phase. I'll show you more when the f
 - Express
 - Sequelize
 - Postgres
+- Axios
 - Voleyball
 - Bcrypt
 - JWT
@@ -137,11 +138,13 @@ Detailed documentation of all API methods can be found <a href="https://document
   - [x] My User profile
   - [x] User's profile
   - [x] Search Movie
-  - [ ] Search TV Show
+  - [x] Search TV Show
   - [x] Search User
   - [x] Favorites list: Create, Share, Delete
   - [x] Movie details
-  - [ ] TV Show details
+  - [x] TV Show details
+  - [ ] Movie Genres
+  - [ ] TV Show Genres
 - [ ] Admin features
   - [x] Delete users
   - [x] Change roles
