@@ -131,7 +131,7 @@ Detailed documentation of all API methods can be found <a href="https://document
 
 ## Roadmap
 
-- [ ] Features for all users
+- [x] Features for all users
   - [x] Sign up
   - [x] Login/Logout
   - [x] Session persistence
@@ -143,8 +143,8 @@ Detailed documentation of all API methods can be found <a href="https://document
   - [x] Favorites list: Create, Share, Delete
   - [x] Movie details
   - [x] TV Show details
-  - [ ] Movie Genres
-  - [ ] TV Show Genres
+  - [x] Movie Genres
+  - [x] TV Show Genres
 - [ ] Admin features
   - [x] Delete users
   - [x] Change roles
