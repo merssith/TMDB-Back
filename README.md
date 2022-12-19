@@ -136,9 +136,12 @@ Detailed documentation of all API methods can be found <a href="https://document
   - [x] Session persistence
   - [x] My User profile
   - [x] User's profile
-  - [ ] Search: Movie, TV Show, User
-  - [ ] Favorites list: Create, Share, Delete
-  - [ ] Movie or TV Show details
+  - [x] Search Movie
+  - [ ] Search TV Show
+  - [x] Search User
+  - [x] Favorites list: Create, Share, Delete
+  - [x] Movie details
+  - [ ] TV Show details
 - [ ] Admin features
   - [x] Delete users
   - [x] Change roles
