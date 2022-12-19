@@ -2,10 +2,12 @@ const sequelize = require("sequelize");
 const Op = sequelize.Op;
 const { User } = require("../models");
 const imageService = require("./imageService");
+const { getPagingDataUsers } = require("../utils/functions");
 
 exports.allUsers = async (page) => {
   let skipUsers = page;
   skipUsers >= 1 ? (skipUsers -= 1) : null;
+  let limit = 8;
 
   const usersRequest = await User.findAndCountAll({
     order: [["userName", "ASC"]],
@@ -17,15 +19,16 @@ exports.allUsers = async (page) => {
     attributes: {
       exclude: ["password", "updatedAt", "createdAt", "role", "salt"],
     },
-    limit: 8,
-    offset: page ? skipUsers * 8 : 0,
+    limit: limit,
+    offset: page ? skipUsers * limit : 0,
     distinct: true,
   });
   if (!usersRequest.rows.length) throw 404;
 
-  const { totalUsers, users, totalPages, currentPage } = getPagingData(
+  const { totalUsers, users, totalPages, currentPage } = getPagingDataUsers(
     usersRequest,
-    page
+    page,
+    limit
   );
 
   return { totalUsers, users, totalPages, currentPage };
@@ -182,13 +185,4 @@ exports.deleteUser = async (id, thisUser) => {
     throw 400;
   }
   return User.destroy({ where: { id } });
-};
-
-// ADITIONAL FUNCTIONS
-
-const getPagingData = (data, page) => {
-  const { count: totalUsers, rows: users } = data;
-  const currentPage = page ? page : 1;
-  const totalPages = Math.ceil(totalUsers / 8);
-  return { totalUsers, users, totalPages, currentPage };
 };

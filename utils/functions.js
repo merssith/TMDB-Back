@@ -18,4 +18,18 @@ function generateUUID() {
   });
 }
 
-module.exports = { generateUUID };
+function getPagingDataUsers(data, page, limit) {
+  const { count: totalUsers, rows: users } = data;
+  const currentPage = page ? page : 1;
+  const totalPages = Math.ceil(totalUsers / limit);
+  return { totalUsers, users, totalPages, currentPage };
+}
+
+function getPagingDataLists(data, page, limit) {
+  const { count: totalLists, rows: lists } = data;
+  const currentPage = page ? page : 1;
+  const totalPages = Math.ceil(totalLists / limit);
+  return { totalLists, lists, totalPages, currentPage };
+}
+
+module.exports = { generateUUID, getPagingDataUsers, getPagingDataLists };

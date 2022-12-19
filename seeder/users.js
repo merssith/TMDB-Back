@@ -8,6 +8,7 @@ const users = [
     email: "superadmin@1.com",
     password: "hello1234",
     role: "SuperAdmin",
+    preferences: ["Drama", "Comedy", "Crime"],
   },
   {
     name: "Kevin",
@@ -16,6 +17,7 @@ const users = [
     email: "kevindonaldson@1.com",
     password: "hello1234",
     role: "Admin",
+    preferences: ["Family", "Comedy", "Fantasy"],
   },
   {
     name: "Dominic",
@@ -24,6 +26,7 @@ const users = [
     email: "dominic234@1.com",
     password: "hello1234",
     role: "Admin",
+    preferences: ["Documentary", "Animation"],
   },
   {
     name: "Halima",
@@ -32,6 +35,7 @@ const users = [
     email: "Merrill2022@1.com",
     password: "hello1234",
     role: "User",
+    preferences: ["Drama", "Comedy", "Crime"],
   },
   {
     name: "Elsie",
@@ -40,6 +44,7 @@ const users = [
     email: "elsie@1.com",
     password: "hello1234",
     role: "User",
+    preferences: ["Romance", "War", "Music"],
   },
   {
     name: "Faris",
@@ -48,6 +53,7 @@ const users = [
     email: "Carlson@1.com",
     password: "hello1234",
     role: "User",
+    preferences: ["Drama", "Comedy", "Crime"],
   },
   {
     name: "Evie",
@@ -56,6 +62,7 @@ const users = [
     email: "Torres@1.com",
     password: "hello1234",
     role: "User",
+    preferences: ["Romance", "War", "Music"],
   },
   {
     name: "Clyde",
@@ -64,6 +71,7 @@ const users = [
     email: "ClydeLove@1.com",
     password: "hello1234",
     role: "User",
+    preferences: ["Family", "Comedy", "Fantasy"],
   },
   {
     name: "Christian",
@@ -72,6 +80,7 @@ const users = [
     email: "BookerChris@1.com",
     password: "hello1234",
     role: "User",
+    preferences: ["Science Fiction", "Western", "Fantasy"],
   },
   {
     name: "Aled",
@@ -80,6 +89,7 @@ const users = [
     email: "Ayala2022@1.com",
     password: "hello1234",
     role: "User",
+    preferences: ["Science Fiction", "Horror", "Documentary"],
   },
 ];
 

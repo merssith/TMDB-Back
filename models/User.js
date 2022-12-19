@@ -52,6 +52,10 @@ User.init(
       type: S.STRING,
       defaultValue: "User",
     },
+    preferences: {
+      type: S.ARRAY(S.STRING),
+      defaultValue: null,
+    },
   },
   { sequelize: db, modelName: "user" }
 );
