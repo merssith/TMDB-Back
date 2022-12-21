@@ -145,10 +145,10 @@ Detailed documentation of all API methods can be found <a href="https://document
   - [x] TV Show details
   - [x] Movie Genres
   - [x] TV Show Genres
-- [ ] Admin features
+- [x] Admin features
   - [x] Delete users
   - [x] Change roles
-  - [ ] Change index carrousel
+  - [x] Change index carrousel
 - [ ] Additional features
   - [ ] Recommendations: TV Shows or Movies based on user preferences
   - [ ] Surprise me: Randomly choose a tv show or movie
