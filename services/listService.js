@@ -1,7 +1,6 @@
 const sequelize = require("sequelize");
 const Op = sequelize.Op;
 const { List } = require("../models");
-const { getPagingDataLists } = require("../utils/functions");
 
 exports.allLists = async (page) => {
   let skipLists = page;
@@ -19,13 +18,7 @@ exports.allLists = async (page) => {
   });
   if (!listsRequest.rows.length) throw 404;
 
-  const { totalLists, lists, totalPages, currentPage } = getPagingDataLists(
-    listsRequest,
-    page,
-    limit
-  );
-
-  return { totalLists, lists, totalPages, currentPage };
+  return { listsRequest, page, limit };
 };
 
 exports.allPublicLists = async (page) => {
@@ -47,13 +40,7 @@ exports.allPublicLists = async (page) => {
   });
   if (!listsRequest.rows.length) throw 404;
 
-  const { totalLists, lists, totalPages, currentPage } = getPagingDataLists(
-    listsRequest,
-    page,
-    limit
-  );
-
-  return { totalLists, lists, totalPages, currentPage };
+  return { listsRequest, page, limit };
 };
 
 exports.myLists = async (page, user) => {
@@ -75,13 +62,7 @@ exports.myLists = async (page, user) => {
   });
   if (!listsRequest.rows.length) throw 404;
 
-  const { totalLists, lists, totalPages, currentPage } = getPagingDataLists(
-    listsRequest,
-    page,
-    limit
-  );
-
-  return { totalLists, lists, totalPages, currentPage };
+  return { listsRequest, page, limit };
 };
 
 exports.listInformation = async (id) => {
