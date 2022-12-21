@@ -1,10 +1,11 @@
 const listService = require("../services/listService");
+const listDto = require("../dto/listDto");
 
 exports.allLists = (req, res) => {
   let { page } = req.query;
   listService
     .allLists(page)
-    .then((lists) => res.status(200).send(lists))
+    .then((lists) => res.status(200).send(listDto.parsePagingData(lists)))
     .catch((err) => res.status(500).send(err));
 };
 
@@ -12,7 +13,7 @@ exports.allPublicLists = (req, res) => {
   let { page } = req.query;
   listService
     .allPublicLists(page)
-    .then((lists) => res.status(200).send(lists))
+    .then((lists) => res.status(200).send(listDto.parsePagingData(lists)))
     .catch((err) => res.status(500).send(err));
 };
 
@@ -21,7 +22,7 @@ exports.myLists = (req, res) => {
   const user = req.user;
   listService
     .myLists(page, user)
-    .then((lists) => res.status(200).send(lists))
+    .then((lists) => res.status(200).send(listDto.parsePagingData(lists)))
     .catch((err) => res.status(500).send(err));
 };
 

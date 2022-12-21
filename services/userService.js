@@ -2,7 +2,6 @@ const sequelize = require("sequelize");
 const Op = sequelize.Op;
 const { User } = require("../models");
 const imageService = require("./imageService");
-const { getPagingDataUsers } = require("../utils/functions");
 
 exports.allUsers = async (page) => {
   let skipUsers = page;
@@ -24,14 +23,7 @@ exports.allUsers = async (page) => {
     distinct: true,
   });
   if (!usersRequest.rows.length) throw 404;
-
-  const { totalUsers, users, totalPages, currentPage } = getPagingDataUsers(
-    usersRequest,
-    page,
-    limit
-  );
-
-  return { totalUsers, users, totalPages, currentPage };
+  return { usersRequest, page, limit };
 };
 
 exports.registerUser = (user) => {

@@ -1,11 +1,12 @@
 const userService = require("../services/userService");
 const { generateToken } = require("../config/tokens");
+const userDto = require("../dto/userDto");
 
 exports.allUsers = (req, res) => {
   let { page } = req.query;
   userService
     .allUsers(page)
-    .then((users) => res.status(200).send(users))
+    .then((users) => res.status(200).send(userDto.parsePagingData(users)))
     .catch((err) => res.status(500).send(err));
 };
 
