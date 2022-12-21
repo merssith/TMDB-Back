@@ -151,7 +151,7 @@ Detailed documentation of all API methods can be found <a href="https://document
   - [x] Change index carrousel
 - [ ] Additional features
   - [ ] Recommendations: TV Shows or Movies based on user preferences
-  - [ ] Surprise me: Randomly choose a tv show or movie
+  - [x] Surprise me: Randomly choose a tv show or movie
   - [ ] Backend monitoring
   - [ ] Email service
 
