@@ -1,4 +1,5 @@
 const userService = require("../services/userService");
+const emailService = require("../services/emailService");
 const { generateToken } = require("../config/tokens");
 const userDto = require("../dto/userDto");
 
@@ -14,7 +15,10 @@ exports.registerUser = (req, res) => {
   const user = req.body;
   userService
     .registerUser(user)
-    .then((newUser) => res.status(201).send(newUser))
+    .then((newUser) => {
+      emailService.sendRegisterEmail(newUser);
+      res.status(201).send(newUser);
+    })
     .catch((err) => res.status(500).send(err));
 };
 
