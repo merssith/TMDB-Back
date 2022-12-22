@@ -18,4 +18,25 @@ function generateUUID() {
   });
 }
 
-module.exports = { generateUUID };
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function idsToString(array) {
+  let string = "";
+  string += array[0].id;
+  for (let i = 1; i < array.length; i++) {
+    string += "," + array[i].id;
+  }
+  return string;
+}
+
+function checkAge(userAge) {
+  if (userAge >= 21) {
+    return true;
+  } else return false;
+}
+
+module.exports = { generateUUID, checkAge, idsToString, getRandomInt };

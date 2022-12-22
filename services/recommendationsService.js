@@ -1,54 +1,100 @@
 require("dotenv").config();
 const axios = require("axios");
+const { checkAge, idsToString, getRandomInt } = require("../utils/functions");
 
 exports.surpriseMe = async () => {
-  const limitResults = 5;
-  let moviesRecommendations = [];
-  let tvRecommendations = [];
-  let movieLimit = await getLimits("movie");
-  let tvShowLimit = await getLimits("tv");
-
-  for (let i = 0; i < limitResults; i++) {
-    let id = getRandomInt(1, movieLimit);
-    let movieRecommendation = await getRecommendation("movie", id);
-    if (movieRecommendation != null && movieRecommendation.adult === false)
-      moviesRecommendations.push(movieRecommendation);
-
-    id = getRandomInt(1, tvShowLimit);
-    let tvRecommendation = await getRecommendation("tv", id);
-    if (tvRecommendation != null && tvRecommendation.adult === false)
-      tvRecommendations.push(tvRecommendation);
-  }
-
+  let page = getRandomInt(1, 500);
+  let moviesRecommendations = await getRecommendation("movie", page);
+  let tvRecommendations = await getRecommendation("tv", page);
   return { moviesRecommendations, tvRecommendations };
+};
+
+exports.recommendationMovieByPreferences = async (user) => {
+  if (!user.moviePreferences) throw 404;
+  let userMoviePreferences = idsToString(user.moviePreferences);
+  let adultBool = false;
+  if (user.age) {
+    adultBool = checkAge(user.age);
+  }
+  let movieRecommendations = await getRecommendationByPreferences(
+    "movie",
+    userMoviePreferences,
+    adultBool
+  );
+  return movieRecommendations;
+};
+
+exports.recommendationTvByPreferences = async (user) => {
+  if (!user.tvPreferences) throw 404;
+  let userTvPreferences = idsToString(user.tvPreferences);
+  let adultBool = false;
+  if (user.age) {
+    adultBool = checkAge(user.age);
+  }
+  let tvRecommendations = await getRecommendationByPreferences(
+    "tv",
+    userTvPreferences,
+    adultBool
+  );
+  return tvRecommendations;
+};
+
+exports.recommendationMovieOnePreference = async (user, id) => {
+  let adultBool = false;
+  if (user.age) {
+    adultBool = checkAge(user.age);
+  }
+  let movieRecommendations = await getRecommendationByPreferences(
+    "movie",
+    id,
+    adultBool
+  );
+  return movieRecommendations;
+};
+
+exports.recommendationTvOnePreference = async (user, id) => {
+  let adultBool = false;
+  if (user.age) {
+    adultBool = checkAge(user.age);
+  }
+  let tvRecommendations = await getRecommendationByPreferences(
+    "tv",
+    id,
+    adultBool
+  );
+  return tvRecommendations;
 };
 
 // ADITIONAL FUNCTIONS
 
-async function getLimits(source) {
+async function getRecommendation(source, page) {
   return await axios
     .get(
-      `https://api.themoviedb.org/3/${source}/latest?api_key=${process.env.API_KEY_TMDB}`
+      `https://api.themoviedb.org/3/discover/${source}?api_key=${process.env.API_KEY_TMDB}&include_adult=false&page=${page}&sort_by=popularity.desc`,
+      {
+        headers: { "Accept-Encoding": "gzip,deflate,compress" },
+      }
     )
-    .then((result) => {
-      return result.data.id;
+    .then((response) => {
+      return response.data.results;
     })
     .catch((err) => err);
 }
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min);
-}
-
-async function getRecommendation(source, id) {
+async function getRecommendationByPreferences(
+  source,
+  userPreferences,
+  adultBool
+) {
   return await axios
     .get(
-      `https://api.themoviedb.org/3/${source}/${id}?api_key=${process.env.API_KEY_TMDB}`
+      `https://api.themoviedb.org/3/discover/${source}?api_key=${process.env.API_KEY_TMDB}&with_genres=${userPreferences}&include_adult=${adultBool}&page=1&sort_by=popularity.desc`,
+      {
+        headers: { "Accept-Encoding": "gzip,deflate,compress" },
+      }
     )
     .then((response) => {
-      return response.data;
+      return response.data.results;
     })
     .catch((err) => err);
 }

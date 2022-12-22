@@ -4,7 +4,10 @@ const axios = require("axios");
 exports.topMovies = async () => {
   const moviesRequest = await axios
     .get(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY_TMDB}`
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY_TMDB}`,
+      {
+        headers: { "Accept-Encoding": "gzip,deflate,compress" },
+      }
     )
     .then((movies) => {
       return movies.data.results;
@@ -17,7 +20,10 @@ exports.topMovies = async () => {
 exports.searchMovies = async (query) => {
   const moviesRequest = await axios
     .get(
-      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY_TMDB}&query=${query}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY_TMDB}&query=${query}`,
+      {
+        headers: { "Accept-Encoding": "gzip,deflate,compress" },
+      }
     )
     .then((movies) => {
       return movies.data.results;
@@ -30,7 +36,10 @@ exports.searchMovies = async (query) => {
 exports.seeMovieDetails = async (movieId) => {
   const movieRequest = await axios
     .get(
-      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY_TMDB}`
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY_TMDB}`,
+      {
+        headers: { "Accept-Encoding": "gzip,deflate,compress" },
+      }
     )
     .then((movie) => {
       return movie.data;
