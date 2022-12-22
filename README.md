@@ -153,7 +153,7 @@ Detailed documentation of all API methods can be found <a href="https://document
   - [x] Recommendations: TV Shows or Movies based on user preferences
   - [x] Surprise me: Randomly choose a tv show or movie
   - [ ] Backend monitoring
-  - [ ] Email service
+  - [x] Email service
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

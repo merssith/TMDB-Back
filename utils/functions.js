@@ -1,3 +1,5 @@
+let fs = require("fs");
+
 function generateUUID() {
   var d = new Date().getTime();
   var d2 =
@@ -39,4 +41,20 @@ function checkAge(userAge) {
   } else return false;
 }
 
-module.exports = { generateUUID, checkAge, idsToString, getRandomInt };
+function readHTMLFile(path, callback) {
+  fs.readFile(path, { encoding: "utf-8" }, function (err, html) {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, html);
+    }
+  });
+}
+
+module.exports = {
+  generateUUID,
+  checkAge,
+  idsToString,
+  getRandomInt,
+  readHTMLFile,
+};
