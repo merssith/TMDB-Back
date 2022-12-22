@@ -8,7 +8,27 @@ const users = [
     email: "superadmin@1.com",
     password: "hello1234",
     role: "SuperAdmin",
-    preferences: ["Drama", "Comedy", "Crime"],
+    age: 33,
+    moviePreferences: [
+      {
+        id: 28,
+        name: "Action",
+      },
+      {
+        id: 12,
+        name: "Adventure",
+      },
+    ],
+    tvPreferences: [
+      {
+        id: 10759,
+        name: "Action & Adventure",
+      },
+      {
+        id: 16,
+        name: "Animation",
+      },
+    ],
   },
   {
     name: "Kevin",
@@ -17,7 +37,27 @@ const users = [
     email: "kevindonaldson@1.com",
     password: "hello1234",
     role: "Admin",
-    preferences: ["Family", "Comedy", "Fantasy"],
+    age: 40,
+    moviePreferences: [
+      {
+        id: 16,
+        name: "Animation",
+      },
+      {
+        id: 35,
+        name: "Comedy",
+      },
+    ],
+    tvPreferences: [
+      {
+        id: 35,
+        name: "Comedy",
+      },
+      {
+        id: 80,
+        name: "Crime",
+      },
+    ],
   },
   {
     name: "Dominic",
@@ -26,7 +66,27 @@ const users = [
     email: "dominic234@1.com",
     password: "hello1234",
     role: "Admin",
-    preferences: ["Documentary", "Animation"],
+    age: 27,
+    moviePreferences: [
+      {
+        id: 80,
+        name: "Crime",
+      },
+      {
+        id: 99,
+        name: "Documentary",
+      },
+    ],
+    tvPreferences: [
+      {
+        id: 99,
+        name: "Documentary",
+      },
+      {
+        id: 18,
+        name: "Drama",
+      },
+    ],
   },
   {
     name: "Halima",
@@ -35,7 +95,27 @@ const users = [
     email: "Merrill2022@1.com",
     password: "hello1234",
     role: "User",
-    preferences: ["Drama", "Comedy", "Crime"],
+    age: 17,
+    moviePreferences: [
+      {
+        id: 28,
+        name: "Action",
+      },
+      {
+        id: 12,
+        name: "Adventure",
+      },
+    ],
+    tvPreferences: [
+      {
+        id: 10759,
+        name: "Action & Adventure",
+      },
+      {
+        id: 16,
+        name: "Animation",
+      },
+    ],
   },
   {
     name: "Elsie",
@@ -44,7 +124,27 @@ const users = [
     email: "elsie@1.com",
     password: "hello1234",
     role: "User",
-    preferences: ["Romance", "War", "Music"],
+    age: 12,
+    moviePreferences: [
+      {
+        id: 16,
+        name: "Animation",
+      },
+      {
+        id: 35,
+        name: "Comedy",
+      },
+    ],
+    tvPreferences: [
+      {
+        id: 35,
+        name: "Comedy",
+      },
+      {
+        id: 80,
+        name: "Crime",
+      },
+    ],
   },
   {
     name: "Faris",
@@ -53,7 +153,27 @@ const users = [
     email: "Carlson@1.com",
     password: "hello1234",
     role: "User",
-    preferences: ["Drama", "Comedy", "Crime"],
+    age: 21,
+    moviePreferences: [
+      {
+        id: 80,
+        name: "Crime",
+      },
+      {
+        id: 99,
+        name: "Documentary",
+      },
+    ],
+    tvPreferences: [
+      {
+        id: 99,
+        name: "Documentary",
+      },
+      {
+        id: 18,
+        name: "Drama",
+      },
+    ],
   },
   {
     name: "Evie",
@@ -62,7 +182,27 @@ const users = [
     email: "Torres@1.com",
     password: "hello1234",
     role: "User",
-    preferences: ["Romance", "War", "Music"],
+    age: 30,
+    moviePreferences: [
+      {
+        id: 28,
+        name: "Action",
+      },
+      {
+        id: 12,
+        name: "Adventure",
+      },
+    ],
+    tvPreferences: [
+      {
+        id: 10759,
+        name: "Action & Adventure",
+      },
+      {
+        id: 16,
+        name: "Animation",
+      },
+    ],
   },
   {
     name: "Clyde",
@@ -71,7 +211,27 @@ const users = [
     email: "ClydeLove@1.com",
     password: "hello1234",
     role: "User",
-    preferences: ["Family", "Comedy", "Fantasy"],
+    age: 65,
+    moviePreferences: [
+      {
+        id: 16,
+        name: "Animation",
+      },
+      {
+        id: 35,
+        name: "Comedy",
+      },
+    ],
+    tvPreferences: [
+      {
+        id: 35,
+        name: "Comedy",
+      },
+      {
+        id: 80,
+        name: "Crime",
+      },
+    ],
   },
   {
     name: "Christian",
@@ -80,7 +240,27 @@ const users = [
     email: "BookerChris@1.com",
     password: "hello1234",
     role: "User",
-    preferences: ["Science Fiction", "Western", "Fantasy"],
+    age: 98,
+    moviePreferences: [
+      {
+        id: 80,
+        name: "Crime",
+      },
+      {
+        id: 99,
+        name: "Documentary",
+      },
+    ],
+    tvPreferences: [
+      {
+        id: 99,
+        name: "Documentary",
+      },
+      {
+        id: 18,
+        name: "Drama",
+      },
+    ],
   },
   {
     name: "Aled",
@@ -89,7 +269,27 @@ const users = [
     email: "Ayala2022@1.com",
     password: "hello1234",
     role: "User",
-    preferences: ["Science Fiction", "Horror", "Documentary"],
+    age: 10,
+    moviePreferences: [
+      {
+        id: 28,
+        name: "Action",
+      },
+      {
+        id: 12,
+        name: "Adventure",
+      },
+    ],
+    tvPreferences: [
+      {
+        id: 10759,
+        name: "Action & Adventure",
+      },
+      {
+        id: 16,
+        name: "Animation",
+      },
+    ],
   },
 ];
 

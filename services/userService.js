@@ -92,6 +92,7 @@ exports.searchByUserNameOrEmail = async (queryString, filter) => {
 exports.loginUser = async (userName, password) => {
   if (Object.keys(userName).length === 0) return 400;
   if (Object.keys(password).length === 0) return 400;
+  userName = userName.toLowerCase();
   const user = await User.findOne({ where: { userName } });
   if (!user) throw 404;
   const validate = await user.validatePassword(password);
@@ -117,6 +118,9 @@ exports.getMe = async (id) => {
     email: user.email,
     avatar: user.avatar,
     role: user.role,
+    age: user.age,
+    moviePreferences: user.moviePreferences,
+    tvPreferences: user.tvPreferences,
   };
 };
 
@@ -161,6 +165,9 @@ exports.editUserById = async (id, body, thisUser) => {
     userName: body.userName,
     email: body.email,
     role: body.role,
+    age: body.age,
+    moviePreferences: body.moviePreferences,
+    tvPreferences: body.tvPreferences,
   };
   await user.update(editUser);
   return user;

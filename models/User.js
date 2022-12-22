@@ -52,13 +52,25 @@ User.init(
       type: S.STRING,
       defaultValue: "User",
     },
-    preferences: {
-      type: S.ARRAY(S.STRING),
+    moviePreferences: {
+      type: S.ARRAY(S.JSON),
       defaultValue: null,
+    },
+    tvPreferences: {
+      type: S.ARRAY(S.JSON),
+      defaultValue: null,
+    },
+    age: {
+      type: S.INTEGER,
     },
   },
   { sequelize: db, modelName: "user" }
 );
+
+User.beforeCreate((user) => {
+  user.userName = user.userName.toLowerCase();
+  return user.userName;
+});
 
 User.beforeCreate((user) => {
   const salt = bcrypt.genSaltSync();
