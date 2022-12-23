@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Merssith/TMDB-Back">
-    <img src="utils/images/logo.png" alt="Logo" width="400">
+    <img src="utils/images/logo.png" alt="Logo" width="450">
   </a>
 
 <h3 align="center">THE MOVIE DATABASE - BACKEND</h3>
@@ -30,7 +30,7 @@
     <li>
       <a href="#about-the-proyect">About The Project</a>
       <ul>
-        <li><a href="#will-built-with">Will Built With</a></li>
+        <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
@@ -58,13 +58,14 @@ The project is currently in the development phase. I'll show you more when the f
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Will Built With
+### Built With
 
 - NodeJS
 - Nodemon
 - Express
 - Sequelize
 - Postgres
+- Axios
 - Voleyball
 - Bcrypt
 - JWT
@@ -118,11 +119,9 @@ You must meet the following pre-requisites to be able to use this project
 
 ## API Documentation
 
-It's not available yet. Come back soon! ;)
+<p align="center"><img src="https://cdn.shopify.com/s/files/1/0057/5668/2355/files/Postman-logo-orange-2021_1155x.png?v=1637252529" alt="Logo" width="40%"></p>
 
-<!-- <p align="center"><img src="https://cdn.shopify.com/s/files/1/0057/5668/2355/files/Postman-logo-orange-2021_1155x.png?v=1637252529" alt="Logo" width="40%"></p>
-
-Detailed documentation of all API methods can be found <a href="https://documenter.getpostman.com/view/18263083/2s8YzP35ck" target="_blank">HERE</a>. You can also download the complete [Postman collection]().-->
+Detailed documentation of all API methods can be found <a href="https://documenter.getpostman.com/view/18263083/2s8YzXuKbR" target="_blank">HERE</a>. You can also download the complete [Postman collection](https://api.postman.com/collections/18263083-b6ad1532-24d9-44f3-b3e7-911f5d98fd47?access_key=PMAT-01GMBRCG6ZRG0ZDVPP3AHYZW6C).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,24 +129,29 @@ Detailed documentation of all API methods can be found <a href="https://document
 
 ## Roadmap
 
-- [ ] Features for all users
-  - [ ] Sign up
-  - [ ] Login/Logout
-  - [ ] Session persistence
-  - [ ] My User profile
-  - [ ] User's profile
-  - [ ] Search: Movie, TV Show, User
-  - [ ] Favorites list: Create, Share, Delete
-  - [ ] Movie or TV Show details
-- [ ] Admin features
-  - [ ] Delete users
-  - [ ] Change roles
-  - [ ] Change index carrousel
-- [ ] Additional features
-  - [ ] Recommendations: TV Shows or Movies based on user preferences
-  - [ ] Surprise me: Randomly choose a tv show or movie
-  - [ ] Backend monitoring
-  - [ ] Email service
+- [x] Features for all users
+  - [x] Sign up
+  - [x] Login/Logout
+  - [x] Session persistence
+  - [x] My User profile
+  - [x] User's profile
+  - [x] Search Movie
+  - [x] Search TV Show
+  - [x] Search User
+  - [x] Favorites list: Create, Share, Delete
+  - [x] Movie details
+  - [x] TV Show details
+  - [x] Movie Genres
+  - [x] TV Show Genres
+- [x] Admin features
+  - [x] Delete users
+  - [x] Change roles
+  - [x] Change index carrousel
+- [x] Additional features
+  - [x] Recommendations: TV Shows or Movies based on user preferences
+  - [x] Surprise me: Randomly choose a tv show or movie
+  - [x] Backend monitoring
+  - [x] Email service
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
