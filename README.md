@@ -119,8 +119,6 @@ You must meet the following pre-requisites to be able to use this project
 
 ## API Documentation
 
-The documentation is not complete as it is still in the development phase. Come back soon for more updates ;)
-
 <p align="center"><img src="https://cdn.shopify.com/s/files/1/0057/5668/2355/files/Postman-logo-orange-2021_1155x.png?v=1637252529" alt="Logo" width="40%"></p>
 
 Detailed documentation of all API methods can be found <a href="https://documenter.getpostman.com/view/18263083/2s8YzXuKbR" target="_blank">HERE</a>. You can also download the complete [Postman collection](https://api.postman.com/collections/18263083-b6ad1532-24d9-44f3-b3e7-911f5d98fd47?access_key=PMAT-01GMBRCG6ZRG0ZDVPP3AHYZW6C).
@@ -149,10 +147,10 @@ Detailed documentation of all API methods can be found <a href="https://document
   - [x] Delete users
   - [x] Change roles
   - [x] Change index carrousel
-- [ ] Additional features
+- [x] Additional features
   - [x] Recommendations: TV Shows or Movies based on user preferences
   - [x] Surprise me: Randomly choose a tv show or movie
-  - [ ] Backend monitoring
+  - [x] Backend monitoring
   - [x] Email service
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
