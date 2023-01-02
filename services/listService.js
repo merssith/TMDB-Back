@@ -10,7 +10,7 @@ exports.allLists = async (page) => {
   const listsRequest = await List.findAndCountAll({
     order: [["id", "ASC"]],
     attributes: {
-      exclude: ["updatedAt", "createdAt"],
+      exclude: ["updatedAt", "createdAt", "content"],
     },
     limit: limit,
     offset: page ? skipLists * limit : 0,
@@ -32,7 +32,7 @@ exports.allPublicLists = async (page) => {
     },
     order: [["id", "ASC"]],
     attributes: {
-      exclude: ["updatedAt", "createdAt"],
+      exclude: ["updatedAt", "createdAt", "content"],
     },
     limit: limit,
     offset: page ? skipLists * limit : 0,
@@ -54,7 +54,7 @@ exports.myLists = async (page, user) => {
     },
     order: [["id", "ASC"]],
     attributes: {
-      exclude: ["updatedAt", "createdAt"],
+      exclude: ["updatedAt", "createdAt", "content"],
     },
     limit: limit,
     offset: page ? skipLists * limit : 0,
