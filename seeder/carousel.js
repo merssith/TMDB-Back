@@ -2,6 +2,7 @@ const homeService = require("../services/homeService");
 
 const carousel = [
   {
+    title: "Avengers I",
     image:
       "https://static1.colliderimages.com/wordpress/wp-content/uploads/avengers-character-poster-banner-slice.jpg",
     content:
@@ -10,6 +11,7 @@ const carousel = [
     position: 1,
   },
   {
+    title: "Harry Potter I",
     image:
       "https://media.revistagq.com/photos/61bb3b6b36216799ec22c162/16:9/w_2560%2Cc_limit/harry-potter-hbo-max.jpeg",
     content:
@@ -18,6 +20,7 @@ const carousel = [
     position: 2,
   },
   {
+    title: "The Lord Of The Rings II",
     image:
       "https://images.squarespace-cdn.com/content/v1/5c4f9c40f8370a0dd9949a42/1601289253050-USME0LFCHVM1I39QGMMY/banner.jpg",
     content:
@@ -26,16 +29,19 @@ const carousel = [
     position: 3,
   },
   {
+    title: "Example",
     image: "www.google.com",
     content: "Some banner description",
     active: false,
   },
   {
+    title: "Another Example",
     image: "www.google.com",
     content: "Another banner description",
     active: false,
   },
   {
+    title: "More Examples",
     image: "www.google.com",
     content: "More banner description",
     active: false,
