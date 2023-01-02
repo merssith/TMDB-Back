@@ -10,13 +10,20 @@ exports.allUsers = async (page) => {
 
   const usersRequest = await User.findAndCountAll({
     order: [["userName", "ASC"]],
-    include: [
-      {
-        association: User.List,
-      },
-    ],
     attributes: {
-      exclude: ["password", "updatedAt", "createdAt", "role", "salt"],
+      exclude: [
+        "password",
+        "updatedAt",
+        "createdAt",
+        "role",
+        "salt",
+        "name",
+        "lastName",
+        "moviePreferences",
+        "tvPreferences",
+        "age",
+        "email",
+      ],
     },
     limit: limit,
     offset: page ? skipUsers * limit : 0,
@@ -58,13 +65,20 @@ exports.searchByUserNameOrEmail = async (queryString, filter) => {
           [sequelize.Op.iLike]: queryString,
         },
       },
-      include: [
-        {
-          association: User.List,
-        },
-      ],
       attributes: {
-        exclude: ["password", "updatedAt", "createdAt", "role", "salt"],
+        exclude: [
+          "password",
+          "updatedAt",
+          "createdAt",
+          "role",
+          "salt",
+          "name",
+          "lastName",
+          "moviePreferences",
+          "tvPreferences",
+          "age",
+          "email",
+        ],
       },
     });
     if (!user) throw 404;
@@ -75,13 +89,20 @@ exports.searchByUserNameOrEmail = async (queryString, filter) => {
           [sequelize.Op.iLike]: queryString,
         },
       },
-      include: [
-        {
-          association: User.List,
-        },
-      ],
       attributes: {
-        exclude: ["password", "updatedAt", "createdAt", "role", "salt"],
+        exclude: [
+          "password",
+          "updatedAt",
+          "createdAt",
+          "role",
+          "salt",
+          "name",
+          "lastName",
+          "moviePreferences",
+          "tvPreferences",
+          "age",
+          "email",
+        ],
       },
     });
     if (!user) throw 404;
