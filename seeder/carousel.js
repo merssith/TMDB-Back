@@ -26,6 +26,7 @@ const carousel = [
     active: false,
   },
   {
+    title: "Newsletter banner",
     image:
       "https://www.devservice.es/wp-content/uploads/2017/01/email-newsletter.jpg",
     content: "Subscribe to our newsletter!!!",
