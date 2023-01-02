@@ -4,22 +4,22 @@ const homeController = require("../controllers/homeController");
 const { validateAdmin } = require("../middlewares/auth");
 
 // GET HOME CARROUSEL
-router.get("/carrousel", validateAdmin, homeController.carrousel);
+router.get("/carousel", validateAdmin, homeController.carousel);
 
 // GET HOME CARROUSEL ACTIVE
-router.get("/carrousel/active", homeController.carrouselActive);
+router.get("/carousel/active", homeController.carouselActive);
 
 // CREATE NEW CARROUSEL SLIDE
-router.post("/carrousel", validateAdmin, homeController.newCarrouselSlide);
+router.post("/carousel", validateAdmin, homeController.newCarouselSlide);
 
 // DELETE CARROUSEL SLIDE
 router.delete(
-  "/carrousel/:id",
+  "/carousel/:id",
   validateAdmin,
-  homeController.deleteCarrouselSlide
+  homeController.deleteCarouselSlide
 );
 
 // UPDATE CARROUSEL SLIDE
-router.put("/carrousel/:id", validateAdmin, homeController.editCarrouselSlide);
+router.put("/carousel/:id", validateAdmin, homeController.editCarouselSlide);
 
 module.exports = router;
