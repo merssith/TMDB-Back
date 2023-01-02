@@ -1,7 +1,7 @@
 const createUsers = require("./users.js");
 const createLists = require("./lists.js");
-const createCarrousel = require("./carrousel.js");
+const createCarousel = require("./carousel.js");
 
 createUsers()
   .then(() => createLists())
-  .then(() => createCarrousel());
+  .then(() => createCarousel());

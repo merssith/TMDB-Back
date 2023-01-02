@@ -1,6 +1,6 @@
 const homeService = require("../services/homeService");
 
-const carrousel = [
+const carousel = [
   {
     image:
       "https://static1.colliderimages.com/wordpress/wp-content/uploads/avengers-character-poster-banner-slice.jpg",
@@ -42,12 +42,12 @@ const carrousel = [
   },
 ];
 
-async function createCarrousel() {
-  for (let i = 0; i < carrousel.length; i++) {
-    let carrouselSlides = carrousel[i];
-    await homeService.newCarrouselSlide(carrouselSlides);
+async function createCarousel() {
+  for (let i = 0; i < carousel.length; i++) {
+    let carouselSlides = carousel[i];
+    await homeService.newCarouselSlide(carouselSlides);
   }
-  console.log("CARROUSEL created");
+  console.log("CAROUSEL created");
 }
 
-module.exports = createCarrousel;
+module.exports = createCarousel;
