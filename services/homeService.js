@@ -7,7 +7,7 @@ const tvShowsService = require("./tvShowsService");
 exports.carousel = async () => {
   const carousel = await IndexCarousel.findAll({
     attributes: {
-      exclude: ["updatedAt", "createdAt"],
+      exclude: ["updatedAt", "createdAt", "image", "content"],
     },
   });
   if (!carousel.length) throw 404;
@@ -17,7 +17,7 @@ exports.carousel = async () => {
 exports.carouselActive = async () => {
   const carouselActive = await IndexCarousel.findAll({
     attributes: {
-      exclude: ["updatedAt", "createdAt"],
+      exclude: ["updatedAt", "createdAt", "active"],
     },
     where: [
       {
@@ -76,4 +76,9 @@ exports.editCarouselSlide = async (modifiedSlide, id) => {
   if (Object.keys(modifiedSlide).length === 0) return 400;
   const editedSlide = await slide.update(modifiedSlide);
   return editedSlide;
+};
+
+exports.getCarouselSlideById = async (id) => {
+  if (isNaN(id)) throw 400;
+  return await IndexCarousel.findByPk(id);
 };
