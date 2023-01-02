@@ -40,6 +40,8 @@ exports.newCarouselSlide = async (slide) => {
         "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" +
         movie.poster_path,
       content: movie.overview,
+      active: slide.active,
+      position: slide.position,
     };
     return await IndexCarousel.create(movieSlide);
   } else if (slide.tvShowId) {
@@ -51,6 +53,8 @@ exports.newCarouselSlide = async (slide) => {
         "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" +
         tvShow.poster_path,
       content: tvShow.overview,
+      active: slide.active,
+      position: slide.position,
     };
     return await IndexCarousel.create(tvShowSlide);
   } else {
