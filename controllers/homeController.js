@@ -3,14 +3,14 @@ const homeService = require("../services/homeService.js");
 exports.carousel = (req, res) => {
   homeService
     .carousel()
-    .then((carrousels) => res.status(200).send(carrousels))
+    .then((carousels) => res.status(200).send(carousels))
     .catch((err) => res.status(500).send(err));
 };
 
 exports.carouselActive = (req, res) => {
   homeService
     .carouselActive()
-    .then((carrousels) => res.status(200).send(carrousels))
+    .then((carousels) => res.status(200).send(carousels))
     .catch((err) => res.status(500).send(err));
 };
 
@@ -36,5 +36,13 @@ exports.editCarouselSlide = (req, res) => {
   homeService
     .editCarouselSlide(modifiedSlide, id)
     .then((modifiedSlide) => res.status(202).send(modifiedSlide))
+    .catch((err) => res.status(500).send(err));
+};
+
+exports.getCarouselSlideById = (req, res) => {
+  const id = req.params.id;
+  homeService
+    .getCarouselSlideById(id)
+    .then((carousel) => res.status(200).send(carousel))
     .catch((err) => res.status(500).send(err));
 };
