@@ -5,6 +5,9 @@ class IndexCarousel extends S.Model {}
 
 IndexCarousel.init(
   {
+    title: {
+      type: S.STRING,
+    },
     image: {
       type: S.STRING,
     },
