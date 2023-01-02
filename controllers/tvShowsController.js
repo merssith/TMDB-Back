@@ -1,9 +1,10 @@
 const tvShowsService = require("../services/tvShowsService");
+const tvShowDto = require("../dto/tvShowDto");
 
 exports.topTvShows = (req, res) => {
   tvShowsService
     .topTvShows()
-    .then((tvShows) => res.status(200).send(tvShows))
+    .then((tvShows) => res.status(200).send(tvShowDto.parseTvShowData(tvShows)))
     .catch((err) => res.status(500).send(err));
 };
 
@@ -11,7 +12,7 @@ exports.searchTvShows = (req, res) => {
   let { query } = req.query;
   tvShowsService
     .searchTvShows(query)
-    .then((tvShows) => res.status(200).send(tvShows))
+    .then((tvShows) => res.status(200).send(tvShowDto.parseTvShowData(tvShows)))
     .catch((err) => res.status(500).send(err));
 };
 
