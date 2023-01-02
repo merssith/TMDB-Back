@@ -1,5 +1,5 @@
 const User = require("./User");
 const List = require("./List");
-const IndexCarrousel = require("./IndexCarrousel.js");
+const IndexCarousel = require("./IndexCarousel.js");
 
-module.exports = { User, List, IndexCarrousel };
+module.exports = { User, List, IndexCarousel };

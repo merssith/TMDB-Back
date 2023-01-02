@@ -1,9 +1,9 @@
 const S = require("sequelize");
 const db = require("../config/db");
 
-class IndexCarrousel extends S.Model {}
+class IndexCarousel extends S.Model {}
 
-IndexCarrousel.init(
+IndexCarousel.init(
   {
     image: {
       type: S.STRING,
@@ -19,7 +19,7 @@ IndexCarrousel.init(
       type: S.INTEGER,
     },
   },
-  { sequelize: db, modelName: "index_carrousel" }
+  { sequelize: db, modelName: "index_carousel" }
 );
 
-module.exports = IndexCarrousel;
+module.exports = IndexCarousel;

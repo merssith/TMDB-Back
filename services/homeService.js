@@ -1,19 +1,19 @@
 const sequelize = require("sequelize");
 const Op = sequelize.Op;
-const { IndexCarrousel } = require("../models");
+const { IndexCarousel } = require("../models");
 
-exports.carrousel = async () => {
-  const carrousel = await IndexCarrousel.findAll({
+exports.carousel = async () => {
+  const carousel = await IndexCarousel.findAll({
     attributes: {
       exclude: ["updatedAt", "createdAt"],
     },
   });
-  if (!carrousel.length) throw 404;
-  return carrousel;
+  if (!carousel.length) throw 404;
+  return carousel;
 };
 
-exports.carrouselActive = async () => {
-  const carrouselActive = await IndexCarrousel.findAll({
+exports.carouselActive = async () => {
+  const carouselActive = await IndexCarousel.findAll({
     attributes: {
       exclude: ["updatedAt", "createdAt"],
     },
@@ -23,26 +23,26 @@ exports.carrouselActive = async () => {
       },
     ],
   });
-  if (!carrouselActive.length) throw 404;
-  return carrouselActive;
+  if (!carouselActive.length) throw 404;
+  return carouselActive;
 };
 
-exports.newCarrouselSlide = async (slide) => {
+exports.newCarouselSlide = async (slide) => {
   if (Object.keys(slide).length === 0) throw 400;
-  const createCarrouselSlide = await IndexCarrousel.create(slide);
-  return createCarrouselSlide;
+  const createCarouselSlide = await IndexCarousel.create(slide);
+  return createCarouselSlide;
 };
 
-exports.deleteCarrouselSlide = async (id) => {
+exports.deleteCarouselSlide = async (id) => {
   if (isNaN(id)) throw 400;
-  const slide = await IndexCarrousel.findByPk(id);
+  const slide = await IndexCarousel.findByPk(id);
   if (!slide) throw 404;
-  return IndexCarrousel.destroy({ where: { id } });
+  return IndexCarousel.destroy({ where: { id } });
 };
 
-exports.editCarrouselSlide = async (modifiedSlide, id) => {
+exports.editCarouselSlide = async (modifiedSlide, id) => {
   if (isNaN(id)) throw 400;
-  const slide = await IndexCarrousel.findByPk(id);
+  const slide = await IndexCarousel.findByPk(id);
   if (!slide) throw 404;
   if (Object.keys(modifiedSlide).length === 0) return 400;
   const editedSlide = await slide.update(modifiedSlide);

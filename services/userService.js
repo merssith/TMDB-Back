@@ -146,6 +146,9 @@ exports.editUser = async (id, body) => {
   let editUser = {
     name: body.name,
     lastName: body.lastName,
+    moviePreferences: body.moviePreferences,
+    tvPreferences: body.tvPreferences,
+    age: body.age,
   };
   await user.update(editUser);
   return user;
