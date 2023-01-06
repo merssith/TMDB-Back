@@ -9,7 +9,6 @@ exports.parseTvShowData = (data) => {
         data[i].poster_path,
       vote_average: data[i].vote_average,
       overview: data[i].overview,
-      original_language: data[i].original_language,
       genre: data[i].genre_ids,
     };
     tvShowArray.push(tvShowObject);
